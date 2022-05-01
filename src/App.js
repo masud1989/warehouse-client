@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './component/pages/Home/Home';
+import Login from './component/pages/Login/Login';
+import Register from './component/pages/Register/Register';
+import Footer from './component/shared/Footer/Footer';
+// import Header from './component/shared/Header/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <Routes>
+      <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/home' element={<Home></Home>}></Route>
+      <Route path='/login' element={<Login></Login>}></Route>
+      <Route path='/register' element={<Register></Register>}></Route>
+    </Routes>
+
+      
+
+
+    <Footer></Footer>
     </div>
   );
 }
 
 export default App;
+
+// Client Repo
+// https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-masud1989 
