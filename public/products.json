@@ -1,0 +1,45 @@
+
+[
+    {
+        "id": 1,
+        "name": "PC DIAGNOSTIC TRAINING",
+        "fees": "300",
+        "description": "Use these computer diagnostic tools to run a PC health check and fix issues. Great for Windows 10 diagnostics and support.",
+        "img": "https://i.ibb.co/9btrpgH/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "PC HARDWARE MEINTENANCE TRAINING",
+        "fees": "500",
+        "description": "No matter who you are, whether newbie or veteran, your Windows system will eventually run into problems that aren't so easy to diagnose. (It happens on other operating systems too.) When that happens, what do you do",
+        "img": "https://i.ibb.co/P62tfds/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "OS INSTALLATION",
+        "fees": "150",
+        "description": "You could hire somebody to troubleshoot the problem for you, but that should be a last resort. There's no need to pay someone when you can easily figure out the problem on your own using tools you can download for free.",
+        "img": "https://i.ibb.co/W5KtHxm/3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "NETWORKING ANALYSIS TRAINING",
+        "fees": "180",
+        "description": "Hardware problems can be a huge pain in the neck on Windows. They tend to occur most often when you're using an older version of the operating system (e.g., Windows 7 or Windows 8) or a cutting edge version (e.g., Windows Insider).",
+        "img": "https://i.ibb.co/Y2HPgb3/4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "COMPLETE OFFICE SUPPORT TRAINING",
+        "fees": "100",
+        "description": "HWiNFO is the most comprehensive system summary tool by a long shot. It displays all information about your computer- from the CPU temperatures to fan voltages. In fact, if you are using a Ryzen processor, this should be your go-to choice as alternatives such as CPU-Z have been known to show incorrect readings",
+        "img": "https://i.ibb.co/X51tXH5/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "FOUNDATION OF PROGRAMMING TRAINING",
+        "fees": "300",
+        "description": "WiFi Analyzer is a free tool that does exactly what its name says: it analyzes your Wi-Fi network's setup to see whether your wireless channel is interfering with other nearby Wi-Fi networks.",
+        "img": "https://i.ibb.co/jyVQnRJ/6.jpg"
+    }
+]

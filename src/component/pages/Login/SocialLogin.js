@@ -2,6 +2,8 @@ import React from 'react';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import google from './../../../images/social/google.png';
+import github from './../../../images/social/github.png';
 
 const SocialLogin = () => {
     const [SignInWithGoogle, googleUser, googleLoading, error] = useSignInWithGoogle(auth);
@@ -32,12 +34,12 @@ const SocialLogin = () => {
             {errorElement}
             <div>
                 <button onClick={()=> SignInWithGoogle() } className='btn btn-info w-50 d-block mx-auto my-2 text-white'>
-                    {/* <img style={{width: '30px'}} src={google} alt=""/> */}
+                    <img style={{width: '30px'}} src={google} alt=""/>
                     Google Sign In
                 </button>
                 
-                <button onClick={()=>signInWithGithub()} className='btn btn-info w-50 d-block mx-auto mb-5 text-white'>
-                    {/* <img style={{width: '30px', marginRight: '10px'}} src={github} alt=""/> */}
+                <button onClick={()=>signInWithGithub()} className='btn btn-info w-50 d-block mx-auto my-1 text-white'>
+                    <img style={{width: '30px', marginRight: '10px'}} src={github} alt=""/>
                     Github Sign In
                 </button>
             </div>
