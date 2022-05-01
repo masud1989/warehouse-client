@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import slider1 from '../../images/slider/slider-1.png';
-import slider2 from '../../images/slider/slider-2.png';
-import slider3 from '../../images/slider/slider-3.png';
+import slider1 from '../../images/slider/slider-1.jpg';
+import slider2 from '../../images/slider/slider-2.jpg';
+import slider3 from '../../images/slider/slider-3.jpg';
 
 
 const Slider = () => {
@@ -17,7 +17,7 @@ const Slider = () => {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h5>Very Very Speedy</h5>
+      <h3 className='text-white' className='text-white'>Very Very Speedy</h3>
       <p>This byke is very speedy. If you want to shunt you can choose it</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -29,7 +29,7 @@ const Slider = () => {
       alt="Second slide"
     />
     <Carousel.Caption>
-    <h5>Very Very Speedy</h5>
+    <h3 className='text-white' className='text-white'>Very Very Speedy</h3>
       <p>This byke is very speedy. If you want to shunt you can choose it</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -41,7 +41,7 @@ const Slider = () => {
       alt="Third slide"
     />
     <Carousel.Caption>
-      <h5>Very Very Speedy</h5>
+      <h3 className='text-white' className='text-white'>Very Very Speedy</h3>
       <p>This byke is very speedy. If you want to shunt you can choose it</p>
     </Carousel.Caption>
   </Carousel.Item>
