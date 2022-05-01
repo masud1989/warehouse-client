@@ -29,3 +29,9 @@ export default App;
 
 // Client Repo
 // https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-masud1989 
+
+// Client Site Live 
+// https://inventory-project-2f568.firebaseapp.com
+
+
+//Server site repo: https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-masud1989
