@@ -5,7 +5,9 @@
         "name": "Yamaha DTS 150 ",
         "price": "210000",
         "description": "This is very fast and auto current pickup Bike",
-        "img": "https://i.ibb.co/L5BwK4S/yamaha.jpg"
+        "img": "https://i.ibb.co/L5BwK4S/yamaha.jpg",
+        "quantity": 2,
+        "supplier": "M/S Noyon Enterprice"
     },
     {
         "id": 2,

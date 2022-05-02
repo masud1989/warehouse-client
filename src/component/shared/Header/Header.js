@@ -33,8 +33,8 @@ const Header = () => {
                         {
                             user?
                                 <>
-                                    <Nav.Link as={Link} to='/login' >Inventory</Nav.Link>
-                                    <Nav.Link as={Link} to='/login' >My Item</Nav.Link>
+                                    <Nav.Link as={Link} to='/inventory' >Inventory</Nav.Link>
+                                    <Nav.Link as={Link} to='/' >My Item</Nav.Link>
                                     <a onClick={handleLogout} className="btn btn-info text-danger">Logout</a>
                                 </>
                             :
