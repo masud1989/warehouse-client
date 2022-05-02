@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img from './../../../../images/slider/slider-1.jpg';
 
 const ViewProduct = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect( ()=>{
+        fetch('http://localhost:5000/product')
+        .then(res=>res.json())
+        .then(data=>setProducts(data))
+    }, [])
+
     return (
         <div className='container mb-5  w-75'>
             <h4 className='text-info mb-3 bg-info text-white p-2'>Product List</h4>
-            <table class="table table-sm mb-10">
+            <table className="table table-sm mb-10">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -18,7 +26,6 @@ const ViewProduct = () => {
             </thead>
             <tbody>
                 
-
                 <tr>
                     <th scope="row">Name</th>
                     <td><img style={{height: "70px", width: "90px"}} src={img} alt='' /></td>
