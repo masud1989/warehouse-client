@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import Products from '../Products/Products';
 import img from './../../../../images/slider/slider-1.jpg';
 
@@ -23,7 +24,8 @@ const ViewProduct = () => {
                     .then(res=> res.json())
                     .then(data =>{
                         if(data.deletedCount > 0){
-                            window.alert('Delete Successfull');
+                            // window.alert('Delete Successfull');
+                            toast('Delete Successfull');
                             const remaining = products.filter(product => (product._id !== id));
                             setProducts(remaining);
                         }
@@ -64,6 +66,7 @@ const ViewProduct = () => {
                     }
                 </tbody>
             </table>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

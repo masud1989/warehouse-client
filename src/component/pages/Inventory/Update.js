@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Update = () => {
     const {id} = useParams();
@@ -13,7 +14,7 @@ const Update = () => {
             .then(data => setProduct(data));
     }, [] );
 
-
+    const navigate = useNavigate();
 
     const editProduct = event =>{
         event.preventDefault();
@@ -40,11 +41,16 @@ const Update = () => {
             .then( res => res.json())          
             .then(data => {
                 console.log('Success', data);
-                alert('Product Edit Success')
+                toast('Product Edit Success');
+                // alert('Product Edit Success')
                 event.target.reset();
+                navigate('/inventory');
+                
             })
 
     }
+
+    
 
 
 
@@ -65,31 +71,31 @@ const Update = () => {
                             <div className='col-md-6'>
                                 <div className="form-group mb-3">
                                     <h6>Previous Name: {product.name}</h6>
-                                    <input type="text" className="form-control" id="name" name='name' placeholder="Update Product Name" required/>
+                                    <input type="text" className="form-control" id="name" name='name' placeholder="Update Product Name"/>
                                 </div>
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>
                                 <div className="form-group mb-3">
                                 <h6>Previous Price: {product.price}</h6>
-                                    <input type="text" className="form-control" id="price" name='price' placeholder="Update Product Price" required/>
+                                    <input type="text" className="form-control" id="price" name='price' placeholder="Update Product Price"/>
                                 </div>
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>
                                 <div className="form-group mb-3">
                                 <h6>Previous Supplier: {product.supplier}</h6>
-                                    <input type="text" className="form-control" id="supplier" name='supplier' placeholder="Update Product Supplier" required/>
+                                    <input type="text" className="form-control" id="supplier" name='supplier' placeholder="Update Product Supplier" />
                                 </div>
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>
                                 <div className="form-group mb-3">
                                 <h6>Previous Quantity: {product.quantity}</h6>
-                                    <input type="number" className="form-control" id="quantity" name='quantity' placeholder="New Quantity" required/>
+                                    <input type="number" className="form-control" id="quantity" name='quantity' placeholder="New Quantity" />
                                 </div>
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>
                                 <div className="form-group mb-3">
                                 <h6>Previous Email: {product.email}</h6>
-                                    <input type="email" className="form-control" id="email" name='email' placeholder="New Email" required/>
+                                    <input type="email" className="form-control" id="email" name='email' placeholder="New Email" />
                                 </div>
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>
@@ -105,6 +111,7 @@ const Update = () => {
                         </div>
                         <Button type='submit' className='btn btn-info text-white p-2'>Update Product</Button>
                 </form>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
 
