@@ -17,7 +17,7 @@ const Product = ({product}) => {
             <img src={img} alt=''/>
             <h3>{name}</h3>
             <p>Price: {price} Tk.</p>
-            <p>{description.slice(0,100)}</p>  
+            <p>{description?.slice(0,100)}</p>  
             <h4>Available in Stock: {quantity}</h4>  
             <h4>Supplier:{supplier}</h4>  
             <Button onClick={ ()=> handleNavigateToProductDetails(_id)} className='btn btn-info'>Manage</Button>          

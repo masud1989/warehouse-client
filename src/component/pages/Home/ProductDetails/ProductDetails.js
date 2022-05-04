@@ -4,11 +4,9 @@ import { useParams } from 'react-router-dom';
 import Header from '../../../shared/Header/Header';
 
 const ProductDetails = () => {
-
     const { productId } = useParams();
-
     const [product, setProduct] = useState({});
-
+    const [productQuantity, setProductQuantity] = useState();
     useEffect( () => {
         const url = `http://localhost:5000/product/${productId}`;
        
@@ -17,6 +15,24 @@ const ProductDetails = () => {
             .then(data => setProduct(data))
     }, [])
 
+    const handleDelivered = () =>{
+            const newQuantity = parseInt(product.quantity)-1;
+            const {productQuantity} = newQuantity;
+            console.log(parseInt(newQuantity));
+            const url = `http://localhost:5000/product/${productId}`;
+            fetch(url,{
+                method: 'PATCH',
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body:JSON.stringify(productQuantity),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    alert('Quantity Updated');
+                })
+        }    
     
     return (
         <div>
@@ -32,7 +48,7 @@ const ProductDetails = () => {
                     <h4 className="card-title">Quantity Available: {product.quantity}</h4>
                     <h4 className="card-title">Supplier Name: {product.supplier}</h4>
                     <p className="card-text"><strong>Details:</strong>  {product.description}</p>
-                    <Button className='btn btn-info'>Deliver</Button>
+                    <Button onClick={handleDelivered} className='btn btn-info'>Deliver</Button>
                 </div>
                 </div>
             </div>
