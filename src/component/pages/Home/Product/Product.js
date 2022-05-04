@@ -20,7 +20,7 @@ const Product = ({product}) => {
             <p>{description}</p>  
             <h4>Available in Stock: {quantity}</h4>  
             <h4>Supplier:{supplier}</h4>  
-            <Button onClick={ ()=> handleNavigateToProductDetails(_id)} className='btn btn-info'>Manage Stock</Button>          
+            <Button onClick={ ()=> handleNavigateToProductDetails(_id)} className='btn btn-info'>Deliver</Button>          
         </div>
     );
 };

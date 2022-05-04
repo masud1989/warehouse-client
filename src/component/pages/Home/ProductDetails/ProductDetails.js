@@ -19,7 +19,7 @@ const ProductDetails = () => {
     return (
         <div>
             <Header></Header>
-            <h1>This is product details of :{product.name} </h1>
+            <h1>This is product details of :{product._id} </h1>
         </div>
     );
 };
