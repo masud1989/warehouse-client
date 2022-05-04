@@ -16,6 +16,7 @@ const ProductDetails = () => {
             .then(data => setProduct(data))
     }, [])
 
+    
     return (
         <div>
             <Header></Header>

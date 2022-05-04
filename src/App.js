@@ -3,6 +3,7 @@ import './App.css';
 import Home from './component/pages/Home/Home';
 import ProductDetails from './component/pages/Home/ProductDetails/ProductDetails';
 import Inventory from './component/pages/Inventory/Inventory';
+import Update from './component/pages/Inventory/Update';
 import Login from './component/pages/Login/Login';
 import RequireAuth from './component/pages/Login/RequireAuth';
 import Register from './component/pages/Register/Register';
@@ -30,7 +31,13 @@ function App() {
               <Inventory></Inventory>
           </RequireAuth>
         }>
+      </Route><Route path='/edit/:id' element={
+          <RequireAuth>
+             <Update></Update>
+          </RequireAuth>
+        }>
       </Route>
+      
       
     </Routes>
 

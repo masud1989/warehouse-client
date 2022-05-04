@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Products from '../Products/Products';
 import img from './../../../../images/slider/slider-1.jpg';
 
@@ -55,7 +56,7 @@ const ViewProduct = () => {
                                 <td>{product.price}</td>
                                 <td>{product.quantity}</td>
                                 <td>
-                                    <a className='btn btn-info mx-1'>Edit</a>
+                                    <Link to={`/edit/${product._id}`} className='btn btn-info mx-1'>Edit</Link>
                                     <a onClick={()=>handleDeleteProduct(product._id)} className='btn btn-danger mx-1'>Delete</a>
                                 </td>                                
                             </tr>
