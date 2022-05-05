@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddProduct = () => {
     const addProduct = event =>{
@@ -26,7 +27,8 @@ const AddProduct = () => {
             .then( res => res.json())          
             .then(data => {
                 console.log('Success', data);
-                alert('Product Added Success')
+                // alert('Product Added Success')
+                toast('Product Added Success')
                 event.target.reset();
             })
 
@@ -76,6 +78,7 @@ const AddProduct = () => {
                             <textarea className="form-control mb-4" id="description" name='description' rows="3" placeholder='Description'></textarea>
                         </div>
                         <Button type='submit' className='btn btn-info text-white p-2'>Add Product</Button>
+                        <ToastContainer></ToastContainer>
                 </form>
             </div>
         </div>

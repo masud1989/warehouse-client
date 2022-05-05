@@ -16,8 +16,10 @@ const ProductDetails = () => {
     }, [])
 
     const handleDelivered = () =>{
+    
+            // console.log('ok');
             const newQuantity = parseInt(product.quantity)-1;
-            const {productQuantity} = newQuantity;
+            const productQuantity = newQuantity;
             console.log(parseInt(newQuantity));
             const url = `http://localhost:5000/product/${productId}`;
             fetch(url,{
@@ -25,13 +27,15 @@ const ProductDetails = () => {
                 headers:{
                     'content-type': 'application/json'
                 },
-                body:JSON.stringify(productQuantity),
+                body:JSON.stringify({productQuantity})
             })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
+                    setProductQuantity(data)
                     alert('Quantity Updated');
                 })
+
         }    
     
     return (
