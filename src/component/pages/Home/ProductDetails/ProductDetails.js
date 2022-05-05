@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import Header from '../../../shared/Header/Header';
 
 const ProductDetails = () => {
@@ -32,8 +33,8 @@ const ProductDetails = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    setProductQuantity(data)
-                    alert('Quantity Updated');
+                    setProductQuantity(data);
+                    toast('Delivered Successfull');
                 })
 
         }    
@@ -53,6 +54,7 @@ const ProductDetails = () => {
                     <h4 className="card-title">Supplier Name: {product.supplier}</h4>
                     <p className="card-text"><strong>Details:</strong>  {product.description}</p>
                     <Button onClick={handleDelivered} className='btn btn-info'>Deliver</Button>
+                    <ToastContainer></ToastContainer>
                 </div>
                 </div>
             </div>
