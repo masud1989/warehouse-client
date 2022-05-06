@@ -6,6 +6,7 @@ import Inventory from './component/pages/Inventory/Inventory';
 import Update from './component/pages/Inventory/Update';
 import Login from './component/pages/Login/Login';
 import RequireAuth from './component/pages/Login/RequireAuth';
+import MyItems from './component/pages/MyItems/MyItems';
 import Register from './component/pages/Register/Register';
 import Footer from './component/shared/Footer/Footer';
 // import Header from './component/shared/Header/Header';
@@ -31,9 +32,16 @@ function App() {
               <Inventory></Inventory>
           </RequireAuth>
         }>
-      </Route><Route path='/edit/:id' element={
+      </Route>
+      <Route path='/edit/:id' element={
           <RequireAuth>
              <Update></Update>
+          </RequireAuth>
+        }>
+      </Route>
+      <Route path='/my-items' element={
+          <RequireAuth>
+             <MyItems></MyItems>
           </RequireAuth>
         }>
       </Route>

@@ -1,19 +1,24 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../../../firebase.init';
 
 const AddProduct = () => {
+    const [user] = useAuthState(auth);
     const addProduct = event =>{
+        
         event.preventDefault();
         const name = event.target.name.value;
         const price = event.target.price.value;
         const supplier = event.target.supplier.value;
         const quantity = event.target.quantity.value;
-        const email = event.target.email.value;
+        // const email = event.target.email.value;
+        // const email = user.email;
         const img = event.target.img.value;
         const description = event.target.description.value;
 
-        const product = { name, img, description, price, quantity, supplier, email }
+        const product = { name, img, description, price, quantity, supplier  }
         // console.log({product});
 
         // sending data  =========================================
@@ -33,7 +38,7 @@ const AddProduct = () => {
             })
 
     }
-
+    
     return (
         <div className='container mt-5 w-75'>
             <div className='mx-auto mb-5 border-2 border-info'>
@@ -65,7 +70,7 @@ const AddProduct = () => {
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>
                                 <div className="form-group mb-3">
-                                    <input type="email" className="form-control" id="email" name='email' placeholder="User Email" required/>
+                                    <input type="email" className="form-control" id="email" value={user.email} name='email' placeholder="User Email" required/>
                                 </div>
                             </div>
                             <div className='col-md-6 col-sm-12 col-12'>

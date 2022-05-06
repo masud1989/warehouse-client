@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../../../firebase.init';
 import Header from '../../../shared/Header/Header';
+
 
 const ProductDetails = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
     const [productQuantity, setProductQuantity] = useState();
+    
     useEffect( () => {
         const url = `http://localhost:5000/product/${productId}`;
        
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    })
 
     const handleDelivered = () =>{
     
@@ -36,7 +40,6 @@ const ProductDetails = () => {
                     setProductQuantity(data);
                     toast('Delivered Successfull');
                 })
-
         }    
     
     return (
@@ -53,7 +56,13 @@ const ProductDetails = () => {
                     <h4 className="card-title">Quantity Available: {product.quantity}</h4>
                     <h4 className="card-title">Supplier Name: {product.supplier}</h4>
                     <p className="card-text"><strong>Details:</strong>  {product.description}</p>
-                    <Button onClick={handleDelivered} className='btn btn-info'>Deliver</Button>
+                    <div className='d-flex justify-content-around '>
+                        <Button onClick={handleDelivered} className='btn btn-info'>Deliver</Button>
+                        <form>
+                            <input type='text' name='stock' placeholder='Quantity'/> 
+                            <Button  className='btn btn-info'>Stock Update</Button>
+                        </form>
+                    </div>
                     <ToastContainer></ToastContainer>
                 </div>
                 </div>
