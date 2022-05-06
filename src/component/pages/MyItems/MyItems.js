@@ -23,7 +23,7 @@ const MyItems = () => {
         <div>
             <Header></Header>
             <div className='container mb-5  w-75'>
-               <h3 className='text-info mt-3 mb-3 bg-info text-white p-2'>My Items: {myItems.length} </h3>
+               <h3 className='text-info mt-3 mb-3 bg-info text-white p-2'>My Items-Total: {myItems.length} </h3>
                <table className="table table-sm mb-10">
                     <thead>
                         <tr>
@@ -37,17 +37,22 @@ const MyItems = () => {
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>My  Name</td>
-                            <td>Image</td>
-                            <td>My Supplier</td>
-                            <td>My Price</td>
-                            <td>My Quantity</td>
-                            <td>
-                                <Link to="/" className='btn btn-info mx-1'>Edit</Link>
-                                <a className='btn btn-danger mx-1'>Delete</a>
-                            </td>
-                        </tr>
+                        {
+                            myItems.map(myItem=>
+                             <tr key={myItem._id}>
+                                <td>{myItem.name}</td>
+                                <td><img style={{height: "70px", width: "90px"}} src={myItem.img} alt='' /></td>
+                                <td>{myItem.supplier}</td>
+                                <td>{myItem.price}</td>
+                                <td>{myItem.quantity}</td>
+                                <td>
+                                    <Link to="/" className='btn btn-info mx-1'>Edit</Link>
+                                    <a className='btn btn-danger mx-1'>Delete</a>
+                                </td>
+                             </tr>
+                             )
+                        }
+    
                     </tbody>
                 </table>
             </div>
