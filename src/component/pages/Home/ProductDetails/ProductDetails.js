@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const [productQuantity, setProductQuantity] = useState();
     
     useEffect( () => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://rocky-headland-60884.herokuapp.com/product/${productId}`;
        
         fetch(url)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const ProductDetails = () => {
             const newQuantity = parseInt(product.quantity)-1;
             const productQuantity = newQuantity;
             console.log(parseInt(newQuantity));
-            const url = `http://localhost:5000/product/${productId}`;
+            const url = `https://rocky-headland-60884.herokuapp.com/product/${productId}`;
             fetch(url,{
                 method: 'PATCH',
                 headers:{
