@@ -20,24 +20,24 @@ const MyItems = () => {
         })
 
         const handleDeleteMyItem = id => {
-            console.log('deleting');
-            // const proceed = window.confirm('Are You sure to Delete');
-            //     if(proceed){
-            //         console.log('Deleting Product', id);
-            //         const url = `http://localhost:5000/my-items/${id}`;
-            //         fetch(url, {
-            //             method: 'DELETE'
-            //         })
-            //             .then(res=> res.json())
-            //             .then(data =>{
-            //                 if(data.deletedCount > 0){
-            //                     // window.alert('Delete Successfull');
-            //                     toast('Delete Successfull');
-            //                     const remaining = myItems.filter(product => (product._id !== id));
-            //                     setMyItems(remaining);
-            //                 }
-            //             })
-                // }
+            console.log('deleting', id);
+            const proceed = window.confirm('Are You sure to Delete');
+                if(proceed){
+                    console.log('Deleting Product');
+                    const url = `http://localhost:5000/my-items/${id}`;
+                    fetch(url, {
+                        method: 'DELETE'
+                    })
+                        .then(res=> res.json())
+                        .then(data =>{
+                            if(data.deletedCount > 0){
+                                window.alert('Delete Successfull');
+                                toast('Delete Successfull');
+                                const remaining = myItems.filter(item => (item._id !== id));
+                                setMyItems(remaining);
+                            }
+                        })
+                }
             
         }
 
@@ -63,13 +63,12 @@ const MyItems = () => {
                             myItems.map(myItem=>
                              <tr key={myItem._id}>
                                 <td>{myItem.name}</td>
-                                <td><img style={{height: "70px", width: "90px"}} src={myItem.img} alt='' /></td>
+                                <td><img style={{height: "70px", wmyIdth: "90px"}} src={myItem.img} alt='' /></td>
                                 <td>{myItem.supplier}</td>
                                 <td>{myItem.price}</td>
                                 <td>{myItem.quantity}</td>
                                 <td>
-                                    <Link to="/" className='btn btn-info mx-1'>Edit</Link>
-                                    <a onClick={()=>handleDeleteMyItem(myItems._id)} className='btn btn-danger mx-1'>Delete</a>
+                                    <a onClick={()=>handleDeleteMyItem(myItem.id)} className='btn btn-danger mx-1'>Delete</a>
                                 </td>
                              </tr>
                              )
