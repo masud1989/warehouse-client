@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Footer from '../../shared/Footer/Footer';
 import Header from '../../shared/Header/Header';
@@ -18,6 +19,27 @@ const MyItems = () => {
                 .then (data => setMyItems(data))
         })
 
+        const handleDeleteMyItem = id => {
+            console.log('deleting');
+            // const proceed = window.confirm('Are You sure to Delete');
+            //     if(proceed){
+            //         console.log('Deleting Product', id);
+            //         const url = `http://localhost:5000/my-items/${id}`;
+            //         fetch(url, {
+            //             method: 'DELETE'
+            //         })
+            //             .then(res=> res.json())
+            //             .then(data =>{
+            //                 if(data.deletedCount > 0){
+            //                     // window.alert('Delete Successfull');
+            //                     toast('Delete Successfull');
+            //                     const remaining = myItems.filter(product => (product._id !== id));
+            //                     setMyItems(remaining);
+            //                 }
+            //             })
+                // }
+            
+        }
 
     return (
         <div>
@@ -47,7 +69,7 @@ const MyItems = () => {
                                 <td>{myItem.quantity}</td>
                                 <td>
                                     <Link to="/" className='btn btn-info mx-1'>Edit</Link>
-                                    <a className='btn btn-danger mx-1'>Delete</a>
+                                    <a onClick={()=>handleDeleteMyItem(myItems._id)} className='btn btn-danger mx-1'>Delete</a>
                                 </td>
                              </tr>
                              )
