@@ -31,9 +31,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 # Git Repo Client :https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-masud1989
 
 # Client Site Live  https://inventory-project-2f568.firebaseapp.com
-# Live Site Link
-Server site repo: https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-masud1989
- Server site Live https://rocky-headland-60884.herokuapp.com/
+# Server site repo: https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-masud1989
+# Server site Live https://rocky-headland-60884.herokuapp.com/
 
 
 #  =====================Thank You===================
