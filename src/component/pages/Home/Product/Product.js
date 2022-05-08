@@ -9,7 +9,7 @@ const Product = ({product}) => {
     const navigate = useNavigate();
 
     const handleNavigateToProductDetails = id => {
-        navigate(`/product/${_id}`);
+        navigate(`https://rocky-headland-60884.herokuapp.com/product/${_id}`);
     }
 
     return (
