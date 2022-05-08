@@ -63,7 +63,7 @@ const MyItems = () => {
                             myItems.map(myItem=>
                              <tr key={myItem._id}>
                                 <td>{myItem.name}</td>
-                                <td><img style={{height: "70px", wmyIdth: "90px"}} src={myItem.img} alt='' /></td>
+                                <td><img style={{height: "70px", width: "90px"}} src={myItem.img} alt='' /></td>
                                 <td>{myItem.supplier}</td>
                                 <td>{myItem.price}</td>
                                 <td>{myItem.quantity}</td>
