@@ -11,6 +11,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 - Responsive Banar (Slider)
 - Product List
 - Product Inventory
+- User wise Inventory
 - Category List
 - Footer Section
 - Auth System
